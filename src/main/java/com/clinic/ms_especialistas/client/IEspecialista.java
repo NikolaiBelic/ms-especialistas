@@ -14,6 +14,8 @@ public interface IEspecialista {
     public ResponseEntity<List<Especialista>> findEspecialistasByFiltro(
             @RequestHeader(value = "Tracking-Id") String trackingId,
             @RequestBody Map<String, Object> filtros
-
     );
+
+    @GetMapping("/saludar")
+    ResponseEntity<String> saludar();
 }

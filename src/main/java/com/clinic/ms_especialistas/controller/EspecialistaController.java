@@ -27,4 +27,9 @@ public class EspecialistaController implements IEspecialista {
                 filtros
         ));
     }
+
+    @Override
+    public ResponseEntity<String> saludar() {
+        return ResponseEntity.ok("¡La aplicación funciona correctamente!");
+    }
 }
