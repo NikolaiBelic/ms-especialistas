@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  ms-citas:
+    build: .
+    image: ms-especialistas
+    container_name: ms-especialistas
+    ports:
+      - "8083:8083"
+    environment:
+      - DB_MSSQL_HOST=sqlserver-dev
+      - DB_MSSQL_DATABASE=clinic
+      - DB_MSSQL_USER=SA
+      - DB_MSSQL_PASSWORD=Elalmendro.33
+    networks:
+      cuba-network:
+        aliases:
+          - ms-especialistas
+
+networks:
+  cuba-network:
+    external: true
+    name: cuba-network  # Especifica explícitamente el nombre
